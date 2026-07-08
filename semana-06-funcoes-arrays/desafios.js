@@ -292,8 +292,8 @@ console.log(resumo);
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar a diferença entre return e console.log?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar a diferença entre return e console.log?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 06 resolvida — dupla X & Y"
    ============================================================ */

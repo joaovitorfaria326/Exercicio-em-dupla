@@ -29,7 +29,10 @@
    DICA: texto vai entre aspas; número vai sem aspas.
    RESULTADO ESPERADO (exemplo): Duda / 19 / Santo Amaro */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let nome = "duda";
+let idade = 19;
+let bairro = "Santo Amaro";
+console.log(nome, "/", idade, "/", bairro);
 
 /* ═══ EXERCÍCIO 2 — 🚌 Recarga do bilhete único ═══
    CONTEXTO: você está no Terminal Santo Amaro com R$ 3,50 no
@@ -45,7 +48,10 @@
    DICA: decimal em JavaScript usa PONTO (3.50), não vírgula.
    RESULTADO ESPERADO: Saldo novo: R$ 23.5 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let saldo = 3.50;
+let recarga = 20;
+let saldonovo = saldo + recarga;
+console.log("saldo novo: R$ " + saldonovo);
 
 /* ═══ EXERCÍCIO 3 — 🍟 O troco do lanche ═══
    CONTEXTO: o combo na lanchonete do Largo 13 custa R$ 18 e você
@@ -54,7 +60,10 @@
    DICA: subtração é o sinal de menos (-).
    RESULTADO ESPERADO: Troco: R$ 32 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let custolanche = 18;
+let valorpago = 50;
+let troco = valorpago - custolanche;
+console.log("troco: R$ " + troco);
 
 /* ═══ EXERCÍCIO 4 — 🕵️ Texto que parece número ═══
    CONTEXTO: um formulário devolveu "18" (com aspas!) como preço.
@@ -77,7 +86,10 @@ console.log(typeof preco);
    EXEMPLO: let n = Number(textoQueEhNumero);
    RESULTADO ESPERADO: 20 */
 // ✍️ SOLUÇÃO DA DUPLA:
+let precoCorrigido = "20";
+let soma = Number(precoCorrigido);
 
+console.log(soma);
 
 /* ═══ EXERCÍCIO 6 — 🎓 A média para passar ═══
    CONTEXTO: suas notas nas três atividades da UC09: 7, 9 e 6.
@@ -86,7 +98,13 @@ console.log(typeof preco);
          (a + b + c) / 3
    RESULTADO ESPERADO: Média: 7.333333333333333 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let nota1 = 7;
+let nota2 = 9;
+let nota3 = 6;
+ 
+let media = (nota1 + nota2 + nota3) / 3;
+ 
+console.log("media: " + media);
 
 /* ═══ EXERCÍCIO 7 — 🍕 A pizza da vitória do Brasil ═══
    CONTEXTO: o Brasil ganhou na Copa 🇧🇷 e a galera pediu pizza de
@@ -97,7 +115,11 @@ console.log(typeof preco);
    EXEMPLO: console.log(10 % 4);  // 2 (10 dividido por 4 sobra 2)
    RESULTADO ESPERADO: Sobram 2 pedaços */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let pedacosPizza = 8;
+let pessoas = 3;
+let sobra = pedacosPizza % pessoas;
+console.log("sobram " + sobra + " pedaços");
+ 
 
 /* ═══ EXERCÍCIO 8 — 🎂 Pode entrar no rolê? ═══
    CONTEXTO: o rolê de sábado é 18+.
@@ -108,7 +130,8 @@ console.log(typeof preco);
    let só pode nascer UMA vez no arquivo!)
    RESULTADO ESPERADO: true (ou false, conforme a idade) */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let idaderole = 20;
+console.log(idaderole >= 18);
 
 /* ═══ EXERCÍCIO 9 — 🪪 RG *E* dinheiro ═══
    CONTEXTO: para entrar no rolê precisa de RG E dinheiro da entrada.
@@ -118,7 +141,10 @@ console.log(typeof preco);
    DICA: && = os DOIS precisam ser true; || = UM já basta.
    RESULTADO ESPERADO: false (com &&)  /  true (com ||) */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let temRG = true;
+let temdinheiro = false;
+console.log(temRG || temdinheiro);
+ 
 
 /* ═══ EXERCÍCIO 10 — ⚽ Contador de gols ═══
    CONTEXTO: o Brasil fez mais um! 🥳
@@ -126,7 +152,10 @@ console.log(typeof preco);
    (ou gols = gols + 1). Mostre antes e depois.
    RESULTADO ESPERADO: 2 / 3 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let gol = 2;
+console.log(gol);
+gol++;
+console.log(gol);
 
 /* ═══ EXERCÍCIO 11 — 🔒 const × let ═══
    CONTEXTO: seu CPF não muda; seu saldo muda toda hora.
@@ -140,7 +169,7 @@ console.log(typeof preco);
    PREVISÃO DA DUPLA: ____________________
    RESULTADO ESPERADO: saldoBanco muda numa boa; cpf dá
    TypeError: Assignment to constant variable. */
-const cpf = "111.222.333-44";
+const cpf = "000.000.000-00";
 let saldoBanco = 50;
 saldoBanco = 45;
 console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
@@ -159,7 +188,8 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
    RESULTADO ESPERADO (exemplo):
    Meu nome é Duda, tenho 19 anos e moro em Santo Amaro. */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+console.log("meu nome é " + nome +", tenho " + idade + " anos e moro em " + bairro + ".");
+ 
 
 /* ═══ EXERCÍCIO 13 — 🖥️ Aparecer NA PÁGINA (DOM) ═══
    CONTEXTO: console é para dev; usuário vê a PÁGINA. Hora do DOM!
@@ -173,7 +203,8 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
        document.getElementById("umId").textContent = "um texto";
    RESULTADO ESPERADO: a frase aparece na caixa da página. */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let frase = "meu nome é" + nome + ", tenho" + idade + "anos e moro em " + bairro + ".";
+document.getElementById("saida").textContent = frase;
 
 /* ═══ EXERCÍCIO 14 — ⌨️ Lendo o input ═══
    CONTEXTO: o usuário digita o nome dele — você lê.
@@ -189,11 +220,17 @@ console.log("saldoBanco mudou para", saldoBanco, "| cpf continua", cpf);
       4º escrevo no "saida" — exatamente como no ex. 13
    DICA: valor de input =  document.getElementById("nomeInput").value
    RESULTADO ESPERADO: digitou "Rebeca" e clicou → Bem-vindo(a), Rebeca! */
-function aoClicar() {
   // ✍️ SOLUÇÃO DA DUPLA:
-
+  const botao = document.getElementById("btn");
+const campoNome = document.getElementById("nomeInput");
+const localSaida = document.getElementById("saida");
+  function aoClicar() {
+let nomeDigitado = document.getElementById("nomeInput").value;
+  let mensagem = "Bem-vindo(a), " + nomeDigitado + "!";
+  
+  document.getElementById("saida").textContent = mensagem;
 }
-document.getElementById("btn").addEventListener("click", aoClicar);
+botao.addEventListener("click", aoClicar);
 
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: rachando a pizza ═══
@@ -210,13 +247,22 @@ document.getElementById("btn").addEventListener("click", aoClicar);
    BÔNUS para a dupla discutir: e se um amigo furar e virarem 3?
    RESULTADO ESPERADO: Cada um paga: R$ 18 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let valorPizza = 60;
+let valorRefri = 12;
+let amigos = 4;
+ 
+let totalCadaUm = (valorPizza + valorRefri) / amigos;
+let mensagemFinal = "Cada um paga: R$ " + totalCadaUm;
+ 
+console.log(mensagemFinal);
+ 
+document.getElementById("saida").textContent = mensagemFinal;
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar cada linha via código?
-   [ ] Commit feito nos DOIS repositórios do GitHub?
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar cada linha via código?
+   [✅] Commit feito nos DOIS repositórios do GitHub?
         git add . && git commit -m "Semana 03 resolvida — dupla X & Y"
    ============================================================ */

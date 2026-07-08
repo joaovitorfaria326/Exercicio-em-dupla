@@ -28,7 +28,15 @@
        console.log(curso.nome);
    RESULTADO ESPERADO (exemplo): Duda / 19 / Santo Amaro */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let dev = {
+    nome: "joao",
+    idade: 17,
+    bairro: "Santo Amaro"
+};
+ 
+console.log(dev.nome);
+console.log(dev.idade);
+console.log(dev.bairro);
 
 /* ═══ EXERCÍCIO 2 — 🎉 Conseguiu o estágio! ═══
    CONTEXTO: a vaga saiu! Seu perfil ganha novos dados.
@@ -38,7 +46,11 @@
    DICA: objeto.novaPropriedade = valor;
    RESULTADO ESPERADO: TechSA / 1200 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+dev.empresa = "TechSA";
+dev.bolsa = 1200;
+ 
+console.log(dev.empresa);
+console.log(dev.bolsa);
 
 /* ═══ EXERCÍCIO 3 — 🎤 Elevator pitch (objeto + função) ═══
    CONTEXTO: apresentar-se em 1 frase na entrevista.
@@ -49,7 +61,11 @@
    RESULTADO ESPERADO (exemplo):
    Sou Duda, de Santo Amaro, dev em formação! */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+function apresentar(p) {
+    return "Sou " + p.nome + ", de " + p.bairro + ", dev em formação!";
+}
+ 
+console.log(apresentar(dev));
 
 /* ═══ EXERCÍCIO 4 — 🍕 O carrinho da pizza (array de objetos) ═══
    CONTEXTO: o Brasil ganhou 🇧🇷 e o pedido no app ficou assim: */
@@ -63,8 +79,12 @@ let carrinho = [
    DICA: o preço de cada posição é  carrinho[i].preco
    RESULTADO ESPERADO: Total do pedido: R$ 80 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
-
+let total = 0;
+ 
+for (let produto of carrinho) {
+    total += produto.preco;
+}
+console.log("Total do pedido: R$ " + total);
 /* ═══ EXERCÍCIO 5 — 📦 Objeto vira texto (stringify) ═══
    CONTEXTO: para VIAJAR pela internet (ou ser salvo), o objeto
    vira texto — é o JSON que todo app troca com o servidor.
@@ -73,7 +93,9 @@ let carrinho = [
    RESULTADO ESPERADO (exemplo):
    {"nome":"Duda","idade":19,"bairro":"Santo Amaro","empresa":"TechSA","bolsa":1200} */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let devTexto = JSON.stringify(dev);
+ 
+console.log(devTexto);
 
 /* ═══ EXERCÍCIO 6 — 📬 Texto vira objeto (parse) ═══
    CONTEXTO: a resposta da API de vagas chegou como texto: */
@@ -83,7 +105,9 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
    DICA: no TEXTO o ponto não funciona; no OBJETO, sim.
    RESULTADO ESPERADO: 💼 Dev Júnior em Santo Amaro — R$ 2200 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let dadosVaga = JSON.parse(respostaAPI);
+ 
+console.log(" " + dadosVaga.vaga + " em " + dadosVaga.local + " — R$ " + dadosVaga.salario);
 
 /* ═══ EXERCÍCIO 7 — 💾 Sobrevivendo ao F5 (setItem/getItem) ═══
    CONTEXTO: até hoje tudo que vocês fizeram morria no F5. Acabou.
@@ -92,7 +116,11 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
    e mostre. Depois: APERTE F5 TRÊS VEZES e vejam continuar lá.
    RESULTADO ESPERADO: seu nome — mesmo depois do F5! 🤯 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+localStorage.setItem("nome", "Duda");
+ 
+let nomeGuardado = localStorage.getItem("nome");
+ 
+console.log(nomeGuardado + " — mesmo depois do F5! ");
 
 /* ═══ EXERCÍCIO 8 — 💾 O objeto que não morre ═══
    CONTEXTO: agora o perfil INTEIRO vai sobreviver.
@@ -107,7 +135,11 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
          LER:     getItem + JSON.parse
    RESULTADO ESPERADO: TechSA */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+localStorage.setItem("dev", JSON.stringify(dev));
+ 
+let devRecuperado = JSON.parse(localStorage.getItem("dev"));
+ 
+console.log(devRecuperado.empresa);
 
 /* ═══ EXERCÍCIO 9 — 🕳️ null: a chave que não existe ═══
    CONTEXTO: clássico de bug silencioso (e de entrevista!).
@@ -122,7 +154,6 @@ let respostaAPI = '{"vaga":"Dev Júnior","salario":2200,"local":"Santo Amaro"}';
 console.log(localStorage.getItem("dev"));
 console.log(localStorage.getItem("chaveFantasma"));
 
-
 /* ═══ EXERCÍCIO 10 — 🔢 O contador de visitas ═══
    CONTEXTO: todo site tem um. Agora o de vocês também.
    TAREFA: leia a chave "visitas" convertendo com Number();
@@ -136,7 +167,13 @@ console.log(localStorage.getItem("chaveFantasma"));
    DICA: Number(null) vale 0 — a primeira visita já funciona.
    RESULTADO ESPERADO: Visita nº 1, e crescendo a cada F5 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+let visitas = Number(localStorage.getItem("visitas"));
+ 
+let novasVisitas = visitas + 1;
+ 
+localStorage.setItem("visitas", novasVisitas);
+ 
+console.log("Visita nº " + novasVisitas);
 
 /* ═══ EXERCÍCIO 11 — 🐛 CONSERTE: o erro que grita ═══
    CONTEXTO: um estagiário deixou esse código quebrado. Descomente,
@@ -144,18 +181,19 @@ console.log(localStorage.getItem("chaveFantasma"));
    RESULTADO ESPERADO: 🎮 Bora jogar, Vitor! */
 // console.log("🎮 Bora jogar, " + nomeJogador + "!");
 // ✍️ SOLUÇÃO DA DUPLA (o conserto vem ANTES da linha acima):
-
+let nomeJogador = "Vitor";
+ 
+console.log(" Bora jogar, " + nomeJogador + "!");
 
 /* ═══ EXERCÍCIO 12 — 🐛 CONSERTE: o bug mudo ═══
    CONTEXTO: a vaquinha da pizza está dando um número maluco —
    e NENHUM erro apareceu. (Dica de detetive: typeof!)
    RESULTADO ESPERADO: Vaquinha: R$ 90 */
-let parte1 = "50";   // veio de um input — desconfie!
+// ✍️ SOLUÇÃO DA DUPLA (mostre a vaquinha CERTA):
+let parte1 = 50;   // veio de um input — desconfie!
 let parte2 = 40;
 let vaquinha = parte1 + parte2;
 console.log("Vaquinha: R$ " + vaquinha);
-// ✍️ SOLUÇÃO DA DUPLA (mostre a vaquinha CERTA):
-
 
 /* ═══ EXERCÍCIO 13 — 🛡️ O airbag (try/catch) ═══
    CONTEXTO: o servidor mandou um JSON cortado pela metade —
@@ -168,7 +206,14 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
        try { ...o perigoso... } catch (erro) { ...o plano B... }
    RESULTADO ESPERADO: ⚠️ Resposta corrompida, tente de novo: ... */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+try {
+   
+    let dados = JSON.parse(jsonCortado);
+    console.log(dados);
+} catch (erro) {
+   
+    console.log(" Resposta corrompida, tente de novo: " + erro.message);
+}
 
 /* ═══ EXERCÍCIO 14 — 🛡️ O segurança na porta (validação) ═══
    CONTEXTO: o formulário de recarga do bilhete único 🚌 aceita
@@ -187,7 +232,31 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
    RESULTADO ESPERADO:
    ⚠️ Campo vazio / ⚠️ Isso não é número / ⚠️ Valor tem que ser positivo / ✅ Recarga de R$ 20 */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+function validarRecarga(texto) {
+   
+    if (texto === "") {
+        return " Campo vazio";
+    }
+   
+   
+    if (isNaN(Number(texto))) {
+        return " Isso não é número";
+    }
+   
+   
+    if (Number(texto) <= 0) {
+        return " Valor tem que ser positivo";
+    }
+   
+   
+    return " Recarga de R$ " + Number(texto);
+}
+ 
+ 
+console.log(validarRecarga(""));
+console.log(validarRecarga("abc"));
+console.log(validarRecarga("-5"));
+console.log(validarRecarga("20"));
 
 /* ═══ EXERCÍCIO 15 — 🏆 DESAFIO DA DUPLA: o pedido blindado ═══
    CONTEXTO: juntando a semana INTEIRA num só programa — objetos,
@@ -208,15 +277,38 @@ let jsonCortado = '{"vaga":"Dev Júnior","sal';
        lerPedido('[]')
    RESULTADO ESPERADO: Total: R$ 72 / ⚠️ Pedido inválido / ⚠️ Pedido vazio */
 // ✍️ SOLUÇÃO DA DUPLA:
-
+function lerPedido(texto) {
+    let lista;
+ 
+    try {
+        lista = JSON.parse(texto);
+    } catch (erro) {
+        return " Pedido inválido";
+    }
+ 
+    if (lista.length === 0) {
+        return " Pedido vazio";
+    }
+ 
+    let total = 0;
+    for (let produto of lista) {
+        total += produto.preco;
+    }
+ 
+    return "Total: R$ " + total;
+}
+ 
+console.log(lerPedido('[{"item":"Pizza","preco":60},{"item":"Refri","preco":12}]'));
+console.log(lerPedido('{quebrado'));
+console.log(lerPedido('[]'));
 
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem explicar o par stringify/parse e o try/catch?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem explicar o par stringify/parse e o try/catch?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 07 resolvida — dupla X & Y"
-   [ ] Fechou as 5 listas? 🎉 Vocês estão prontos para a SA —
+   [✅] Fechou as 5 listas? 🎉 Vocês estão prontos para a SA —
        e com um portfólio no GitHub para mostrar na entrevista!
    ============================================================ */

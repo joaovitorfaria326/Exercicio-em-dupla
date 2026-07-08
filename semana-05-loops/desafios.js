@@ -224,13 +224,14 @@ for (let sabor of sabores) {
    RESULTADO ESPERADO: vendo: 637P / vendo: 695X / 🚌 Achei o 675P!
    (746A e 709M NÃO aparecem) */
 // ✍️ SOLUÇÃO DA DUPLA:
-let linhas = ["637P", "695X", "675P", "746A", "709M"];
-for (let linha of linhas) {
-   console.log("vendo: " + linha);
-   if (linha === "67SP!") {
-      console.log(" Achei o 67SP!");
-      break;
-   }
+let listaOnibus = ["637P", "695X", "675P", "746A", "709M"];
+
+for (let linha of listaOnibus) {
+    if (linha === "675P") {
+        console.log("🚌 Achei o 675P!");
+        break;
+    }
+    console.log("vendo: " + linha);
 }
 
 /* ═══ EXERCÍCIO 13 — 🧾 Pulando os zerados (continue) ═══
@@ -299,8 +300,8 @@ console.log("Maior venda: R$ " + maiorVenda);
 
 /* ============================================================
    ✅ CHECKLIST FINAL DA DUPLA
-   [ ] Todas as saídas batem com o resultado esperado?
-   [ ] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
-   [ ] Commit nos DOIS GitHubs:
+   [✅] Todas as saídas batem com o resultado esperado?
+   [✅] Os DOIS sabem apontar, em cada loop, quem impede o infinito?
+   [✅] Commit nos DOIS GitHubs:
         git commit -m "Semana 05 resolvida — dupla X & Y"
    ============================================================ */
