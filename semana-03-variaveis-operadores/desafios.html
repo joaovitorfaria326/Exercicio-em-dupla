@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Semana 03 — Variáveis, Operadores e DOM — exercícios em dupla de lógica de programação. UC09, Senac Largo Treze.">
+  <title>Semana 03 — Variáveis, Operadores e DOM · Versão do Aluno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>🎯 Semana 03 — Variáveis, Operadores e DOM</h1>
+    <p>Preparação para a SA · em <strong>dupla</strong> · vocês só editam o <strong>desafios.js</strong></p>
+  </header>
+
+  <main>
+    <section class="bloco" aria-labelledby="titulo-como-usar">
+      <span class="etiqueta">Como usar</span>
+      <h2 id="titulo-como-usar">Passo a passo</h2>
+      <ol>
+        <li>Aperte <kbd>F12</kbd> e abra a aba <strong>Console</strong> — tudo aparece lá.</li>
+        <li>No <code>desafios.js</code>, cada exercício traz <strong>contexto</strong>, <strong>tarefa</strong>, <strong>exemplo</strong>,
+          <strong>dica</strong> — e, nos mais complexos, um <strong>🧠 como pensar</strong> passo a passo — e o
+          <strong>resultado esperado</strong> para vocês se autocorrigirem.</li>
+        <li>Piloto digita, copiloto confere — <strong>troquem a cada exercício</strong>.</li>
+        <li>Salve e aperte <kbd>F5</kbd> a cada mudança.</li>
+      </ol>
+      <p class="aviso"><strong>Só o <code>desafios.js</code> é de vocês.</strong> Este HTML e o CSS
+        já estão prontos — não precisa (nem deve) mexer neles.</p>
+    </section>
+
+    <section class="bloco" aria-labelledby="titulo-regras">
+      <span class="etiqueta">Regras do jogo</span>
+      <h2 id="titulo-regras">Consulta liberada, IA não</h2>
+      <ol>
+        <li>✅ Permitido: a <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" rel="noopener">documentação oficial (MDN)</a> — os links do tema estão no topo do <code>desafios.js</code> —, o material de leitura da semana e o seu par.</li>
+        <li>🚫 Proibido: pedir a resposta para <abbr title="Inteligência Artificial">IA</abbr> (ChatGPT, Claude, Gemini, Copilot…). Na SA vocês estarão sem ela — treinem como vão jogar.</li>
+        <li>🐙 Terminou? Commit nos <strong>dois</strong> repositórios do GitHub da dupla.</li>
+      </ol>
+    </section>
+
+    <section class="bloco" aria-labelledby="titulo-dom">
+      <span class="etiqueta">Exercícios 13, 14 e 15</span>
+      <h2 id="titulo-dom">Área do DOM — a página que vocês controlam</h2>
+      <p>Os exercícios de <abbr title="Document Object Model">DOM</abbr> escrevem aqui embaixo.
+        Estes elementos já têm os <code>id</code>s que o <code>desafios.js</code> menciona.</p>
+      <form aria-label="Área de teste dos exercícios de DOM">
+        <p>
+          <label for="nomeInput">Nome (exercício 14):</label>
+          <input type="text" id="nomeInput" name="nomeInput" placeholder="Digite um nome e clique no botão">
+        </p>
+        <p>
+          <button type="button" id="btn">Clique aqui (exercício 14)</button>
+        </p>
+        <p class="aviso">
+          Saída dos exercícios 13/14/15:
+          <output id="saida" for="nomeInput">— ainda vazia: o JavaScript de vocês escreve aqui —</output>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="rodape">Preparação para a SA · UC09 · TI116 · Senac Largo Treze · Santo Amaro</footer>
+
+  <script src="desafios.js"></script>
+</body>
+</html>
